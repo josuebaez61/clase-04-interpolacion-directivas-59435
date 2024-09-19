@@ -64,3 +64,60 @@
 <br />
 <br />
 <br />
+
+<hr />
+
+<h3>Directivas estructurales</h3>
+
+<h4>*ngFor</h4>
+<ul>
+  <li *ngFor="let fruta of frutas; let i = index">{{ i }} - {{ fruta }}</li>
+</ul>
+
+<h5>Solo con angular 17 o superior</h5>
+
+<ul>
+  @for (fruta of frutas; track $index) {
+  <li *ngIf="$index !== 1">{{ $index }} - {{ fruta }}</li>
+  }
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Aprobado</th>
+      <th>Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alumno of alumnos; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ alumno.nombre }}</td>
+      <td [ngClass]="alumno.estaAprobado ? 'success' : 'error'">
+        {{ alumno.estaAprobado }}
+      </td>
+      <td>
+        <button (click)="alumno.estaAprobado = !alumno.estaAprobado">
+          {{ alumno.estaAprobado ? "DESAPROBAR" : "APROBAR" }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>*ngIf</h4>
+
+<p *ngIf="mostrarParrafo; else noMostrarParrafo">Hola mundo!</p>
+<ng-template #noMostrarParrafo>
+  <p>El elemento original fue oculto</p>
+</ng-template>
+
+<h5>Solo con angular 17 o superior</h5>
+
+@if (mostrarParrafo) {
+<p>Hola mundo!</p>
+} @else {
+<p>El elemento original fue oculto</p>
+}
