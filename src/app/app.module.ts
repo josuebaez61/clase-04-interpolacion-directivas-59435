@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RoundedBlockDirective } from './shared/rounded-block.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoundedBlockDirective
   ],
   imports: [
     BrowserModule,

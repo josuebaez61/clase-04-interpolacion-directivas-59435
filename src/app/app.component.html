@@ -1,1 +1,66 @@
-{{ title }}
+<input [type]="inputType" />
+<button (mouseleave)="inputType = 'password'" (mouseover)="inputType = 'text'">
+  Mostrar/ocultar
+</button>
+
+{{ frutas }}
+
+<br />
+
+{{ persona | json }}
+
+<br />
+<br />
+<br />
+
+<hr />
+
+<h3 appRoundedBlock>ngClass & ngStyle</h3>
+
+<p [ngClass]="hayError ? 'error' : 'success'">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+  aspernatur perspiciatis porro fuga eius consequuntur, numquam totam saepe iste
+  cum, nobis possimus reprehenderit nesciunt cupiditate autem. Quod placeat
+  recusandae modi.
+</p>
+
+<p [ngClass]="{ error: hayError, success: !hayError }">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+  aspernatur perspiciatis porro fuga eius consequuntur, numquam totam saepe iste
+  cum, nobis possimus reprehenderit nesciunt cupiditate autem. Quod placeat
+  recusandae modi.
+</p>
+
+<p [class.error]="hayError" [class.success]="!hayError">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+  aspernatur perspiciatis porro fuga eius consequuntur, numquam totam saepe iste
+  cum, nobis possimus reprehenderit nesciunt cupiditate autem. Quod placeat
+  recusandae modi.
+</p>
+
+<p [class]="'success'">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente excepturi
+  dolor dolorem suscipit aspernatur laborum ipsum repellendus? Vitae esse nobis
+  eum quos quibusdam magnam cupiditate ipsa, iure quisquam, qui incidunt?
+</p>
+
+<hr />
+
+<p [ngStyle]="{ color: hayError ? 'red' : 'green', fontSize: '20px' }">
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum sequi quam
+  voluptatum excepturi expedita minima ipsa molestias debitis, similique ab.
+  Adipisci veniam harum itaque soluta ut tempore aspernatur debitis perferendis?
+</p>
+
+<p [style.font-size]="hayError ? '20px' : '10px'">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem fugit in,
+  modi minima voluptatibus quidem, enim illum, quod at corporis itaque similique
+  odio esse quaerat dolores molestiae quibusdam. Cupiditate, quidem.
+</p>
+
+<h4 appRoundedBlock>Custom directive H4</h4>
+<p appRoundedBlock>Custom directive</p>
+
+<br />
+<br />
+<br />
