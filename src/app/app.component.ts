@@ -13,6 +13,8 @@ export class AppComponent {
 
   inputType = 'password';
 
+  inputValor = 'Valor por defecto';
+
   title = 'clase-04-interpolacion-directivas';
   frutas = ['Pera', 'Manzana', 'Mango'];
   persona = {
@@ -34,6 +36,8 @@ export class AppComponent {
       estaAprobado: true,
     },
   ];
+
+  estadoCompra: 'PENDIENTE' | 'APROBADA' | 'ENTREGADA' = 'ENTREGADA';
 
   alternarInputType(): void {
     if (this.inputType === 'password') {

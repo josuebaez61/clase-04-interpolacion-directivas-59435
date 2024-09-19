@@ -121,3 +121,53 @@
 } @else {
 <p>El elemento original fue oculto</p>
 }
+
+<h4>*ngSwitch</h4>
+
+<ng-container [ngSwitch]="estadoCompra">
+  <ng-container *ngSwitchCase="'PENDIENTE'">
+    <p>Su compra esta pendiente...</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'APROBADA'">
+    <p>Su compra esta aprobada...</p>
+  </ng-container>
+  <ng-container *ngSwitchCase="'ENTREGADA'">
+    <p>Su compra fue entregada...</p>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <p>Error, el estado de su compra es desconocida</p>
+  </ng-container>
+</ng-container>
+
+<h5>Solo con angular 17 o superior</h5>
+
+@switch (estadoCompra) { @case ('PENDIENTE') {
+<p>Su compra esta pendiente...</p>
+} @case ('APROBADA') {
+<p>Su compra esta aprobada...</p>
+} @case ('ENTREGADA') {
+<p>Su compra esta entregada...</p>
+} @default {
+<p>Error, el estado de su compra es desconocida</p>
+} }
+
+<h2>Tipos de enlazamiento</h2>
+
+<!-- ONE WAY BINDING -->
+<input [type]="inputType" />
+<!-- ENTRADA DE DATOS PARA EL INPUT-->
+<button (click)="inputType = 'password'">Click me!</button>
+<!-- SALIDA DE DATOS DESDE EL BOTON-->
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<!-- TWO WAY BINDING -->
+
+<input [(ngModel)]="inputValor" type="text" />
+
+<p>{{ inputValor }}</p>
