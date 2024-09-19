@@ -15,6 +15,10 @@ export class AppComponent {
 
   inputValor = 'Valor por defecto';
 
+  price = 9999;
+
+  today = new Date();
+
   title = 'clase-04-interpolacion-directivas';
   frutas = ['Pera', 'Manzana', 'Mango'];
   persona = {
